@@ -22,7 +22,7 @@ navbar = dbc.Navbar(
         html.A(
             dbc.Row(
                 [
-                    dbc.Col(html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()),height="5px")),
+                    dbc.Col(html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()),height="75px")),
                     dbc.Col(html.P("Carlos Eduardo, Gerônimo, Lucas Natanael, Raíssa e Sérgio", style={'font-size':'10px','font-weight': 'bold'}),align='center',md=12)
                 ],
             ),
@@ -841,5 +841,4 @@ def update_ranking_criminal_estado(value_uf,value_num):
         return figure
     
 if __name__ == '__main__':
-    app.run_server( port=8050, debug = True)
- #host='0.0.0.0',
+    app.run_server(host='0.0.0.0', port=8050, debug = True)
