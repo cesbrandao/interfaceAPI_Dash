@@ -32,8 +32,8 @@ navbar = dbc.Navbar(
     sticky="top",
     #className='container'
 )
-##### DROPDOWNS PARA QUANTIDADES ##### [DONE]
-#dropdown com os anos no campo de quantidade de crimes por ano [DONE]
+##### DROPDOWNS PARA QUANTIDADES #####
+#dropdown com os anos no campo de quantidade de crimes por ano
 dropdown1_crimes_ano = dbc.FormGroup(
     [
         html.P('Ano', style = {
@@ -53,7 +53,7 @@ dropdown1_crimes_ano = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com UFs no campo de quantidade total de ocorrÊncias [DONE]
+#dropdown com UFs no campo de quantidade total de ocorrÊncias
 dropdown2_ocorrencias = dbc.FormGroup(
     [
         html.P('UF', style = {
@@ -83,7 +83,7 @@ dropdown2_ocorrencias = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com o tipo de crime no campo de quantidade total de ocorrÊncias [DONE]
+#dropdown com o tipo de crime no campo de quantidade total de ocorrÊncias
 dropdown3_ocorrencias = dbc.FormGroup(
     [
         html.P('Tipo de crime', style = {
@@ -105,7 +105,7 @@ dropdown3_ocorrencias = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com UFs no campo de quantidade total de vítimas [DONE]
+#dropdown com UFs no campo de quantidade total de vítimas
 dropdown4_vitimas = dbc.FormGroup(
     [
         html.P('UF', style = {
@@ -135,7 +135,7 @@ dropdown4_vitimas = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com o tipo de crime no campo de quantidade total de vítimas [DONE]
+#dropdown com o tipo de crime no campo de quantidade total de vítimas
 dropdown5_vitimas = dbc.FormGroup(
     [
         html.P('Tipo de crime', style = {
@@ -155,7 +155,7 @@ dropdown5_vitimas = dbc.FormGroup(
             }
 )
 ##### DROPDOWNS PARA MÉDIAS #####
-#dropdown com UFs no campo de média mensal de ocorrências [DONE]
+#dropdown com UFs no campo de média mensal de ocorrências
 dropdown6_ocorrencias_mensais = dbc.FormGroup(
     [
         html.P('UF', style = {
@@ -185,7 +185,7 @@ dropdown6_ocorrencias_mensais = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com o tipo de crime no campo de média mensal de ocorrências {DONE}
+#dropdown com o tipo de crime no campo de média mensal de ocorrências
 dropdown7_ocorrencias = dbc.FormGroup(
     [
         html.P('Tipo de crime', style = {
@@ -207,7 +207,7 @@ dropdown7_ocorrencias = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com o mês de início no campo de média mensal de ocorrências [DONE]
+#dropdown com o mês de início no campo de média mensal de ocorrências
 dropdown8_mes_incio_ocorrencias = dbc.FormGroup(
     [
         html.P('Mês inicio', style = {
@@ -235,7 +235,7 @@ dropdown8_mes_incio_ocorrencias = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com o mês de fim no campo de média mensal de ocorrências [DONE]
+#dropdown com o mês de fim no campo de média mensal de ocorrências
 dropdown9_mes_fim_ocorrencias = dbc.FormGroup(
     [
         html.P('Mês final', style = {
@@ -263,7 +263,7 @@ dropdown9_mes_fim_ocorrencias = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com UFs no campo de média mensal de vitimas [DONE]
+#dropdown com UFs no campo de média mensal de vitimas
 dropdown10_vitimas_mensais = dbc.FormGroup(
     [
         html.P('UF', style = {
@@ -293,7 +293,7 @@ dropdown10_vitimas_mensais = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com o tipo de crime no campo de média mensal de vítimas [DONE]
+#dropdown com o tipo de crime no campo de média mensal de vítimas
 dropdown11_vitimas = dbc.FormGroup(
     [
         html.P('Tipo de crime', style = {
@@ -312,7 +312,7 @@ dropdown11_vitimas = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com o mês de início no campo de média mensal de vítimas [DONE]
+#dropdown com o mês de início no campo de média mensal de vítimas
 dropdown12_mes_incio_vitimas = dbc.FormGroup(
     [
         html.P('Mês inicial', style = {
@@ -339,7 +339,7 @@ dropdown12_mes_incio_vitimas = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com o mês de fim no campo de média mensal de vítimas [DONE]
+#dropdown com o mês de fim no campo de média mensal de vítimas
 dropdown13_mes_fim_vitimas = dbc.FormGroup(
     [
         html.P('Mês final', style = {
@@ -368,7 +368,7 @@ dropdown13_mes_fim_vitimas = dbc.FormGroup(
             }
 )
 ##### DROPDOWNS PARA RANKINGS ##### []
-#dropdown para o ranking de estados a partir de determinado crime [DONE]
+#dropdown para o ranking de estados a partir de determinado crime
 dropdown14_estadual_crime = dbc.FormGroup(
     [
         html.P('Tipo de crime', style = {
@@ -394,7 +394,7 @@ dropdown14_estadual_crime = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown para o ranking de crimes a partir de determinado estado [DONE]
+#dropdown para o ranking de crimes a partir de determinado estado
 dropdown15_criminal_estado = dbc.FormGroup(
     [
         html.P('UF', style = {
@@ -426,7 +426,7 @@ dropdown15_criminal_estado = dbc.FormGroup(
 )
 body = html.Div(
     [
-        #quantidades [DONE]
+        #quantidades
         dbc.Row(
             [
                 #quantidade de vítimas e ocorrências por ano
@@ -477,7 +477,7 @@ body = html.Div(
             ],
             align="center",
         ),
-        #médias [DONE]
+        #médias
         dbc.Row(
             [
                 dbc.Col(
@@ -625,7 +625,7 @@ body = html.Div(
             ],
             align="center",
         ),
-        #rankings [DONE]
+        #rankings
         dbc.Row(
             [
                 dbc.Col(
