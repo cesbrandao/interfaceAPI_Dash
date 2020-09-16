@@ -22,7 +22,7 @@ navbar = dbc.Navbar(
         html.A(
             dbc.Row(
                 [
-                    dbc.Col(html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()),height="75px")),
+                    dbc.Col(html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()),height="5px")),
                     dbc.Col(html.P("Carlos Eduardo, Gerônimo, Lucas Natanael, Raíssa e Sérgio", style={'font-size':'10px','font-weight': 'bold'}),align='center',md=12)
                 ],
             ),
@@ -714,7 +714,10 @@ def update_ocorrencias(value_uf, value_nome_crime):
     data_ocorrencias = data_ocorrencias.json()
     label = "Selecione uma UF e o tipo de crime"
     if (value_uf and value_nome_crime) is not None:
-        label = str(data_ocorrencias['quantidade'])+" ocorrências no estado."
+        count = 0
+        for v in data_ocorrencias.values():
+            count = count + v
+        label = str(count)+" ocorrências no estado."
     return label
 
 #callback para o número total de vítimas
@@ -724,14 +727,20 @@ def update_ocorrencias(value_uf, value_nome_crime):
 )
 
 def update_vitimas(value_uf, value_nome_crime):
-    print(value_uf)
     if (value_uf and value_nome_crime) is None:
         raise PreventUpdate
     else:
         data_vitimas = requests.get("https://crimepontodata.tk/quantidade/vitimas/"+str(value_nome_crime)+"/"+str(value_uf))
         data_vitimas = data_vitimas.json()
-        label = str(data_vitimas['quantidade'])+" vítimas no estado."
-        return label
+        if (value_nome_crime == 'todos'):
+            count = 0
+            for v in data_vitimas.values():
+                count = count + int(v)
+            label = str(count)+" vítimas no estado."
+            return label
+        else:
+            label = str(data_vitimas['quantidade'])+" vítimas no estado."
+            return label
 
 #callback média de vítimas mensais
 @app.callback(
@@ -832,4 +841,5 @@ def update_ranking_criminal_estado(value_uf,value_num):
         return figure
     
 if __name__ == '__main__':
-    app.run_server( host='0.0.0.0', port=8050, debug = False)
+    app.run_server( port=8050, debug = True)
+ #host='0.0.0.0',
