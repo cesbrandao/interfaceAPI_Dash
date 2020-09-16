@@ -691,7 +691,7 @@ def update_crimes_ano_graph(value):
     if value is None:
         raise PreventUpdate
     else:
-        data_crime_ano = requests.get("http://54.174.134.220:8080/quantidade/crimes/"+str(value))
+        data_crime_ano = requests.get("https://crimepontodata.tk/quantidade/crimes/"+str(value))
         data_crime_ano = data_crime_ano.json()
         figure = {
             'data':[
@@ -708,7 +708,7 @@ def update_crimes_ano_graph(value):
 )
 
 def update_ocorrencias(value_uf, value_nome_crime):
-    data_ocorrencias = requests.get("http://54.174.134.220:8080/quantidade/ocorrencias/"+str(value_nome_crime)+"/"+str(value_uf))
+    data_ocorrencias = requests.get("https://crimepontodata.tk/quantidade/ocorrencias/"+str(value_nome_crime)+"/"+str(value_uf))
     data_ocorrencias = data_ocorrencias.json()
     label = "Selecione uma UF e o tipo de crime"
     if (value_uf and value_nome_crime) is not None:
@@ -726,7 +726,7 @@ def update_vitimas(value_uf, value_nome_crime):
     if (value_uf and value_nome_crime) is None:
         raise PreventUpdate
     else:
-        data_vitimas = requests.get("http://54.174.134.220:8080/quantidade/vitimas/"+str(value_nome_crime)+"/"+str(value_uf))
+        data_vitimas = requests.get("https://crimepontodata.tk/quantidade/vitimas/"+str(value_nome_crime)+"/"+str(value_uf))
         data_vitimas = data_vitimas.json()
         label = str(data_vitimas['quantidade'])+" vítimas no estado."
         return label
@@ -748,7 +748,7 @@ def update_vitimas_mensais(value_nome_crime,value_uf,value_anos,value_mes_ini,va
             return label
         else:
             data_media_vitimas = requests.get(
-                "http://54.174.134.220:8080/media/vitimas/"+str(value_nome_crime)+"/"+str(value_uf)+
+                "https://crimepontodata.tk/media/vitimas/"+str(value_nome_crime)+"/"+str(value_uf)+
                 "/"+str(value_mes_ini)+"-"+str(value_anos[0])+"/"+str(value_mes_fim)+"-"+str(value_anos[1]))
             data_media_vitimas = data_media_vitimas.json()
             label = str(round(data_media_vitimas['vitimas'],2))+" é a média de vítimas no estado."
@@ -771,7 +771,7 @@ def update_ocorrencias_mensais(value_nome_crime,value_uf,value_anos,value_mes_in
             return label
         else:
             data_media_ocorrencias = requests.get(
-                "http://54.174.134.220:8080/media/ocorrencias/"+str(value_nome_crime)+"/"+str(value_uf)+
+                "https://crimepontodata.tk/media/ocorrencias/"+str(value_nome_crime)+"/"+str(value_uf)+
                 "/"+str(value_mes_ini)+"-"+str(value_anos[0])+"/"+str(value_mes_fim)+"-"+str(value_anos[1]))
             data_media_ocorrencias = data_media_ocorrencias.json()
             #print(data_media_ocorrencias)
@@ -788,7 +788,7 @@ def update_ranking_estadual_crime(value_nome_crime,value_num):
     if (value_nome_crime and value_num) is None:
         raise PreventUpdate
     else:
-        data_estadual_crime = requests.get("http://54.174.134.220:8080/ranking/"+str(value_num)+"/estadual/"+str(value_nome_crime))
+        data_estadual_crime = requests.get("https://crimepontodata.tk/ranking/"+str(value_num)+"/estadual/"+str(value_nome_crime))
         data_estadual_crime = data_estadual_crime.json()
         cidades = []
         quantidade = []
@@ -814,7 +814,7 @@ def update_ranking_criminal_estado(value_uf,value_num):
     if (value_uf and value_num) is None:
         raise PreventUpdate
     else:
-        data_criminal_estado = requests.get("http://54.174.134.220:8080/ranking/"+str(value_num)+"/criminal/"+str(value_uf))
+        data_criminal_estado = requests.get("https://crimepontodata.tk/ranking/"+str(value_num)+"/criminal/"+str(value_uf))
         data_criminal_estado = data_criminal_estado.json()
         crimes = []
         quantidade = []
