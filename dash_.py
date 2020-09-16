@@ -15,14 +15,15 @@ external_stylesheets = [dbc.themes.BOOTSTRAP]
 app = dash.Dash(__name__, external_stylesheets = external_stylesheets)
 
 #logo crime.data
-img_logo = "assets/logo1.png"
+img_logo = "assets/Logo -  (5).png"
 encoded_image = base64.b64encode(open(img_logo, 'rb').read())
 navbar = dbc.Navbar(
     children=[
         html.A(
             dbc.Row(
                 [
-                    dbc.Col(html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()),height="30px")),
+                    dbc.Col(html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()),height="75px")),
+                    dbc.Col(html.P("Carlos Eduardo, Geronimo, Lucas Natanael, Raissa e Sergio", style={'font-size':'10px','font-weight': 'bold'}),align='center',md=12)
                 ],
             ),
         )
@@ -31,8 +32,8 @@ navbar = dbc.Navbar(
     sticky="top",
     #className='container'
 )
-##### DROPDOWNS PARA QUANTIDADES ##### [OK]
-#dropdown com os anos no campo de quantidade de crimes por ano
+##### DROPDOWNS PARA QUANTIDADES ##### [DONE]
+#dropdown com os anos no campo de quantidade de crimes por ano [DONE]
 dropdown1_crimes_ano = dbc.FormGroup(
     [
         html.P('Ano', style = {
@@ -52,7 +53,7 @@ dropdown1_crimes_ano = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com UFs no campo de quantidade total de ocorrÊncias
+#dropdown com UFs no campo de quantidade total de ocorrÊncias [DONE]
 dropdown2_ocorrencias = dbc.FormGroup(
     [
         html.P('UF', style = {
@@ -60,7 +61,7 @@ dropdown2_ocorrencias = dbc.FormGroup(
         }),
         dcc.Dropdown(
             id="uf_ocorrencias",
-            options=[{'label':'Acre','value':'acre'},{'label':'Alagoas','value':'alagoas'},
+            options=[{'label':'Brasil','value':'brasil'},{'label':'Acre','value':'acre'},{'label':'Alagoas','value':'alagoas'},
             {'label':'Amapá','value':'amapa'},{'label':'Amazonas','value':'amazonas'},
             {'label':'Bahia','value':'bahia'},{'label':'Ceará','value':'ceara'},
             {'label':'Distrito Federal','value':'df'},{'label':'Espírito Santo','value':'espirito_santo'},
@@ -70,10 +71,10 @@ dropdown2_ocorrencias = dbc.FormGroup(
             {'label':'Paraíba','value':'paraiba'},{'label':'Paraná','value':'parana'},
             {'label':'Pernambuco','value':'pernambuco'},{'label':'Piauí','value':'piaui'},
             {'label':'Rio de Janeiro','value':'rio_de_janeiro'},{'label':'Rio Grande do Norte','value':'rio_grande_do_norte'},
-            {'label':'Rio Grande do Sul','value':'rio_grande_do_sul'},{'label':'Rondônia','value':'rondonia'},
+            {'label':'Rio Grande do Sul','value':'rio_grande_do_sul'},{'label':'Rondônia','value':'rondõnia'},
             {'label':'Roraima','value':'roraima'},{'label':'Santa Catarina','value':'santa_catarina'},
             {'label':'São Paulo','value':'são_paulo'},{'label':'Sergipe','value':'sergipe'},
-            {'label':'Tocantins','value':'tocatins'}
+            {'label':'Tocantins','value':'tocantins'}
             ],
         )
     ], style = {'width' : '100%', 
@@ -82,7 +83,7 @@ dropdown2_ocorrencias = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com o tipo de crime no campo de quantidade total de ocorrÊncias
+#dropdown com o tipo de crime no campo de quantidade total de ocorrÊncias [DONE]
 dropdown3_ocorrencias = dbc.FormGroup(
     [
         html.P('Tipo de crime', style = {
@@ -104,7 +105,7 @@ dropdown3_ocorrencias = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com UFs no campo de quantidade total de vítimas
+#dropdown com UFs no campo de quantidade total de vítimas [DONE]
 dropdown4_vitimas = dbc.FormGroup(
     [
         html.P('UF', style = {
@@ -112,7 +113,7 @@ dropdown4_vitimas = dbc.FormGroup(
         }),
         dcc.Dropdown(
             id="uf_vitimas",
-            options=[{'label':'Acre','value':'acre'},{'label':'Alagoas','value':'alagoas'},
+            options=[{'label':'Brasil','value':'brasil'},{'label':'Acre','value':'acre'},{'label':'Alagoas','value':'alagoas'},
             {'label':'Amapá','value':'amapa'},{'label':'Amazonas','value':'amazonas'},
             {'label':'Bahia','value':'bahia'},{'label':'Ceará','value':'ceara'},
             {'label':'Distrito Federal','value':'df'},{'label':'Espírito Santo','value':'espirito_santo'},
@@ -125,7 +126,7 @@ dropdown4_vitimas = dbc.FormGroup(
             {'label':'Rio Grande do Sul','value':'rio_grande_do_sul'},{'label':'Rondônia','value':'rondonia'},
             {'label':'Roraima','value':'roraima'},{'label':'Santa Catarina','value':'santa_catarina'},
             {'label':'São Paulo','value':'são_paulo'},{'label':'Sergipe','value':'sergipe'},
-            {'label':'Tocantins','value':'tocatins'}
+            {'label':'Tocantins','value':'tocantins'}
             ],
         )
     ], style = {'width' : '100%', 
@@ -134,7 +135,7 @@ dropdown4_vitimas = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com o tipo de crime no campo de quantidade total de vítimas
+#dropdown com o tipo de crime no campo de quantidade total de vítimas [DONE]
 dropdown5_vitimas = dbc.FormGroup(
     [
         html.P('Tipo de crime', style = {
@@ -144,7 +145,7 @@ dropdown5_vitimas = dbc.FormGroup(
             id="nome_crime_vitimas",
             options=[{'label':'Homicídio doloso','value':'homicidio_doloso'},
             {'label':'Lesão corporal seguida de morte','value':'lesao_corporal_seguida_de_morte'},
-            {'label':'Roubo seguido de morte (latrocínio)','value':'latrocinio'},
+            {'label':'Roubo seguido de morte (latrocínio)','value':'roubo_seguido_de_morte_(latrocinio)'},
             ],
         )
     ], style = {'width' : '100%', 
@@ -154,7 +155,7 @@ dropdown5_vitimas = dbc.FormGroup(
             }
 )
 ##### DROPDOWNS PARA MÉDIAS #####
-#dropdown com UFs no campo de média mensal de ocorrências
+#dropdown com UFs no campo de média mensal de ocorrências [DONE]
 dropdown6_ocorrencias_mensais = dbc.FormGroup(
     [
         html.P('UF', style = {
@@ -175,7 +176,7 @@ dropdown6_ocorrencias_mensais = dbc.FormGroup(
             {'label':'Rio Grande do Sul','value':'rio_grande_do_sul'},{'label':'Rondônia','value':'rondonia'},
             {'label':'Roraima','value':'roraima'},{'label':'Santa Catarina','value':'santa_catarina'},
             {'label':'São Paulo','value':'são_paulo'},{'label':'Sergipe','value':'sergipe'},
-            {'label':'Tocantins','value':'tocatins'}
+            {'label':'Tocantins','value':'tocantins'}
             ],
         )
     ], style = {'width' : '100%', 
@@ -184,7 +185,7 @@ dropdown6_ocorrencias_mensais = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown com o tipo de crime no campo de média mensal de ocorrências
+#dropdown com o tipo de crime no campo de média mensal de ocorrências {DONE}
 dropdown7_ocorrencias = dbc.FormGroup(
     [
         html.P('Tipo de crime', style = {
@@ -206,24 +207,26 @@ dropdown7_ocorrencias = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-##### DROPDOWNS PARA RANKINGS ##### [OK]
-#dropdown para o ranking de estados a partir de determinado crime
-dropdown8_estadual_crime = dbc.FormGroup(
+#dropdown com o mês de início no campo de média mensal de ocorrências [DONE]
+dropdown8_mes_incio_ocorrencias = dbc.FormGroup(
     [
-        html.P('Tipo de crime', style = {
+        html.P('Mês inicio', style = {
             'textAlign': 'left',
         }),
         dcc.Dropdown(
-            id="ranking_estadual_crime",
-            options=[{'label':'Furto de veículo','value':'furto_de_veiculo'},
-            {'label':'Roubo de veículo','value':'roubo_de_veiculo'},
-            {'label':'Roubo a instituição financeira','value':'roubo_a_instituiçao_financeira'},
-            {'label':'Roubo de carga','value':'roubo_de_carga'},
-            {'label':'Estupro','value':'estupro'},
-            {'label':'Tentativa de homicídio','value':'tentativa_de_homicidio'},
-            {'label':'Homicídio doloso','value':'homicidio_doloso'},
-            {'label':'Lesão corporal seguida de morte','value':'lesao_corporal_seguida_de_morte'},
-            {'label':'Roubo seguido de morte (latrocínio)','value':'latrocinio'}
+            id="mes_inicio_ocorrencias_mensais",
+            options=[{'label':'Janeiro','value':1},
+            {'label':'Fevereiro','value':2},
+            {'label':'Março','value':3},
+            {'label':'Abril','value':4},
+            {'label':'Maio','value':5},
+            {'label':'Junho','value':6},
+            {'label':'Julho','value':7},
+            {'label':'Agosto','value':8},
+            {'label':'Setembro','value':9},
+            {'label':'Outubro','value':10},
+            {'label':'Novembro','value':11},
+            {'label':'Dezembro','value':12}
             ],
         )
     ], style = {'width' : '100%', 
@@ -232,14 +235,42 @@ dropdown8_estadual_crime = dbc.FormGroup(
                'font-weight': 'bold',
             }
 )
-#dropdown para o ranking de crimes a partir de determinado estado
-dropdown9_criminal_estado = dbc.FormGroup(
+#dropdown com o mês de fim no campo de média mensal de ocorrências [DONE]
+dropdown9_mes_fim_ocorrencias = dbc.FormGroup(
+    [
+        html.P('Mês final', style = {
+            'textAlign': 'left',
+        }),
+        dcc.Dropdown(
+            id="mes_fim_ocorrencias_mensais",
+            options=[{'label':'Janeiro','value':1},
+            {'label':'Fevereiro','value':2},
+            {'label':'Março','value':3},
+            {'label':'Abril','value':4},
+            {'label':'Maio','value':5},
+            {'label':'Junho','value':6},
+            {'label':'Julho','value':7},
+            {'label':'Agosto','value':8},
+            {'label':'Setembro','value':9},
+            {'label':'Outubro','value':10},
+            {'label':'Novembro','value':11},
+            {'label':'Dezembro','value':12}
+            ],
+        )
+    ], style = {'width' : '100%', 
+               'fontSize' : '15px', 
+               'color' : '#007CBA', 
+               'font-weight': 'bold',
+            }
+)
+#dropdown com UFs no campo de média mensal de vitimas [DONE]
+dropdown10_vitimas_mensais = dbc.FormGroup(
     [
         html.P('UF', style = {
             'textAlign': 'left',
         }),
         dcc.Dropdown(
-            id="ranking_criminal_estado",
+            id="uf_media_vitimas",
             options=[{'label':'Acre','value':'acre'},{'label':'Alagoas','value':'alagoas'},
             {'label':'Amapá','value':'amapa'},{'label':'Amazonas','value':'amazonas'},
             {'label':'Bahia','value':'bahia'},{'label':'Ceará','value':'ceara'},
@@ -253,7 +284,138 @@ dropdown9_criminal_estado = dbc.FormGroup(
             {'label':'Rio Grande do Sul','value':'rio_grande_do_sul'},{'label':'Rondônia','value':'rondonia'},
             {'label':'Roraima','value':'roraima'},{'label':'Santa Catarina','value':'santa_catarina'},
             {'label':'São Paulo','value':'são_paulo'},{'label':'Sergipe','value':'sergipe'},
-            {'label':'Tocantins','value':'tocatins'}
+            {'label':'Tocantins','value':'tocantins'}
+            ],
+        )
+    ], style = {'width' : '100%', 
+               'fontSize' : '15px', 
+               'color' : '#007CBA', 
+               'font-weight': 'bold',
+            }
+)
+#dropdown com o tipo de crime no campo de média mensal de vítimas [DONE]
+dropdown11_vitimas = dbc.FormGroup(
+    [
+        html.P('Tipo de crime', style = {
+            'textAlign': 'left',
+        }),
+        dcc.Dropdown(
+            id="media_crime_vitimas",
+            options=[{'label':'Homicídio doloso','value':'homicidio_doloso'},
+            {'label':'Lesão corporal seguida de morte','value':'lesao_corporal_seguida_de_morte'},
+            {'label':'Roubo seguido de morte (latrocínio)','value':'roubo_seguido_de_morte_(latrocinio)'},
+            ],
+        )
+    ], style = {'width' : '100%', 
+               'fontSize' : '15px', 
+               'color' : '#007CBA', 
+               'font-weight': 'bold',
+            }
+)
+#dropdown com o mês de início no campo de média mensal de vítimas [DONE]
+dropdown12_mes_incio_vitimas = dbc.FormGroup(
+    [
+        html.P('Mês inicial', style = {
+            'textAlign': 'left',
+        }),
+        dcc.Dropdown(id="mes_inicio_vitimas_mensais",
+            options=[{'label':'Janeiro','value':1},
+            {'label':'Fevereiro','value':2},
+            {'label':'Março','value':3},
+            {'label':'Abril','value':4},
+            {'label':'Maio','value':5},
+            {'label':'Junho','value':6},
+            {'label':'Julho','value':7},
+            {'label':'Agosto','value':8},
+            {'label':'Setembro','value':9},
+            {'label':'Outubro','value':10},
+            {'label':'Novembro','value':11},
+            {'label':'Dezembro','value':12}
+            ],
+        )
+    ], style = {'width' : '100%', 
+               'fontSize' : '15px', 
+               'color' : '#007CBA', 
+               'font-weight': 'bold',
+            }
+)
+#dropdown com o mês de fim no campo de média mensal de vítimas [DONE]
+dropdown13_mes_fim_vitimas = dbc.FormGroup(
+    [
+        html.P('Mês final', style = {
+            'textAlign': 'left',
+        }),
+        dcc.Dropdown(
+            id="mes_fim_vitimas_mensais",
+            options=[{'label':'Janeiro','value':1},
+            {'label':'Fevereiro','value':2},
+            {'label':'Março','value':3},
+            {'label':'Abril','value':4},
+            {'label':'Maio','value':5},
+            {'label':'Junho','value':6},
+            {'label':'Julho','value':7},
+            {'label':'Agosto','value':8},
+            {'label':'Setembro','value':9},
+            {'label':'Outubro','value':10},
+            {'label':'Novembro','value':11},
+            {'label':'Dezembro','value':12}
+            ],
+        )
+    ], style = {'width' : '100%', 
+               'fontSize' : '15px', 
+               'color' : '#007CBA', 
+               'font-weight': 'bold',
+            }
+)
+##### DROPDOWNS PARA RANKINGS ##### []
+#dropdown para o ranking de estados a partir de determinado crime [DONE]
+dropdown14_estadual_crime = dbc.FormGroup(
+    [
+        html.P('Tipo de crime', style = {
+            'textAlign': 'left',
+        }),
+        dcc.Dropdown(
+            id="ranking_estadual_crime",
+            options=[{'label':'Furto de veículo','value':'furto_de_veiculo'},
+            {'label':'Roubo de veículo','value':'roubo_de_veiculo'},
+            {'label':'Roubo a instituição financeira','value':'roubo_a_instituiçao_financeira'},
+            {'label':'Roubo de carga','value':'roubo_de_carga'},
+            {'label':'Estupro','value':'estupro'},
+            {'label':'Tentativa de homicídio','value':'tentativa_de_homicidio'},
+            #{'label':'Homicídio doloso','value':'homicidio_doloso'},
+            #{'label':'Lesão corporal seguida de morte','value':'lesao_corporal_seguida_de_morte'},
+            #{'label':'Roubo seguido de morte (latrocínio)','value':'roubo_seguido_de_morte_(latrocinio)'},
+            #{'label':'Todos','value':'todos'}
+            ],
+        )
+    ], style = {'width' : '100%', 
+               'fontSize' : '15px', 
+               'color' : '#007CBA', 
+               'font-weight': 'bold',
+            }
+)
+#dropdown para o ranking de crimes a partir de determinado estado [DONE]
+dropdown15_criminal_estado = dbc.FormGroup(
+    [
+        html.P('UF', style = {
+            'textAlign': 'left',
+        }),
+        dcc.Dropdown(
+            id="ranking_criminal_estado",
+            options=[{'label':'Brasil','value':'brasil'},{'label':'Acre','value':'acre'},{'label':'Alagoas','value':'alagoas'},
+            {'label':'Amapá','value':'amapa'},{'label':'Amazonas','value':'amazonas'},
+            {'label':'Bahia','value':'bahia'},{'label':'Ceará','value':'ceara'},
+            {'label':'Distrito Federal','value':'df'},{'label':'Espírito Santo','value':'espirito_santo'},
+            {'label':'Goiás','value':'goias'},{'label':'Maranhão','value':'maranhao'},
+            {'label':'Mato Grosso','value':'mato_grosso'},{'label':'Mato Grosso do Sul','value':'mato_grosso_do_sul'},
+            {'label':'Minas Gerais','value':'minas_gerais'},{'label':'Pará','value':'para'},
+            {'label':'Paraíba','value':'paraiba'},{'label':'Paraná','value':'parana'},
+            {'label':'Pernambuco','value':'pernambuco'},{'label':'Piauí','value':'piaui'},
+            {'label':'Rio de Janeiro','value':'rio_de_janeiro'},{'label':'Rio Grande do Norte','value':'rio_grande_do_norte'},
+            {'label':'Rio Grande do Sul','value':'rio_grande_do_sul'},{'label':'Rondônia','value':'rondonia'},
+            {'label':'Roraima','value':'roraima'},{'label':'Santa Catarina','value':'santa_catarina'},
+            {'label':'São Paulo','value':'são_paulo'},{'label':'Sergipe','value':'sergipe'},
+            {'label':'Tocantins','value':'tocantins'}
             ],
         )
     ], style = {'width' : '100%', 
@@ -264,12 +426,13 @@ dropdown9_criminal_estado = dbc.FormGroup(
 )
 body = html.Div(
     [
-        #quantidades [OK]
+        #quantidades [DONE]
         dbc.Row(
             [
                 #quantidade de vítimas e ocorrências por ano
                 dbc.Col(
                     [
+                        html.Br(),
                         html.H4(children = 'Número de ocorrências e vítimas por ano', style = {'textAlign': 'center','color' : '#007CBA'}),
                         dbc.Row([
                             dbc.Col([dropdown1_crimes_ano], md = 3)
@@ -295,6 +458,7 @@ body = html.Div(
                             ),
                         #quantidade total de vítimas por estado
                         html.Br(),
+                        html.Br(),
                         html.H4(children = 'Número total de vítimas por estado', style = {'textAlign': 'center','color' : '#007CBA'}),
                         dbc.Row([
                             dbc.Col([dropdown4_vitimas], md = 6),
@@ -313,23 +477,165 @@ body = html.Div(
             ],
             align="center",
         ),
-        #médias
-        dbc.Row(
-            [
-                dbc.Col(html.Div("One of three columns")),
-                dbc.Col(html.Div("One of three columns")),
-            ],
-            align="center",
-        ),
-        #rankings [OK]
+        #médias [DONE]
         dbc.Row(
             [
                 dbc.Col(
                     [
+                        html.H4(children = 'Média mensal de vítimas por estado', style = {'textAlign': 'center','color' : '#007CBA'}),
+                        dbc.Row(
+                            [
+                                #dropdown UF
+                                dbc.Col([dropdown10_vitimas_mensais],md=6),
+                                #dropdown tipo de crime
+                                dbc.Col([dropdown11_vitimas],md=6)
+                            ]
+                        ),
+                        dbc.Row(
+                            [
+                                #slider "entre anos"
+                                dbc.Col(
+                                    [
+                                        html.Br(),
+                                        dcc.RangeSlider(
+                                        id='entre_anos1', 
+                                        min=2015, 
+                                        max=2020, 
+                                        step=1,
+                                        marks={
+                                            2015: '2015',
+                                            2016: '2016',
+                                            2017: '2017',
+                                            2018: '2018',
+                                            2019: '2019',
+                                            2020: '2020',
+                                        },
+                                        value=[2015, 2016]
+                                        )
+                                    ]
+                                )
+                            ]
+                        ),
+                        dbc.Row(
+                            [
+                                dbc.Col(
+                                    [
+                                        html.Br(),
+                                        dbc.Row(
+                                            [
+                                                #dropdown mês inicial
+                                                dbc.Col([dropdown12_mes_incio_vitimas], md=6),
+                                                #dorpdown mês final
+                                                dbc.Col([dropdown13_mes_fim_vitimas],md=6)
+                                            ]
+                                        )
+                                    ]
+                                )
+                            ]
+                        ),
+                        dbc.Row(
+                            [
+                                dbc.Col(
+                                    [
+                                        html.Div(id='output_media_vitimas', children=["Selecione uma UF, o tipo de crime e o período de tempo"]
+                                        ,style={'background-color':'#39B5E6',
+                                                'fontSize' : '16px', 
+                                                'color' : '#FFFFFF', 
+                                                'textAlign': 'center',
+                                                'font-weight': 'bold',
+                                            }            
+                                        ),
+                                    ]
+                                )
+                            ]
+                        )
+                    ],md=6,
+                ),
+                dbc.Col(
+                    [
+                        html.H4(children = 'Média mensal de ocorrências por estado', style = {'textAlign': 'center','color' : '#007CBA'}),
+                        dbc.Row(
+                            [
+                                #dropdown UF
+                                dbc.Col([dropdown6_ocorrencias_mensais],md=6),
+                                #dropdown tipo de crime
+                                dbc.Col([dropdown7_ocorrencias],md=6)
+                            ]
+                        ),
+                        dbc.Row(
+                            [
+                                #slider "entre anos"
+                                dbc.Col(
+                                    [
+                                        html.Br(),
+                                        dcc.RangeSlider(
+                                            id='entre_anos2',
+                                            min=2015,
+                                            max=2020,
+                                            step=1,
+                                            marks={
+                                                2015: '2015',
+                                                2016: '2016',
+                                                2017: '2017',
+                                                2018: '2018',
+                                                2019: '2019',
+                                                2020: '2020',
+                                            },
+                                            value=[2015, 2016]
+                                        )
+                                    ]
+                                )
+                            ]
+                        ),
+                        dbc.Row(
+                            [
+                                dbc.Col(
+                                    [
+                                        html.Br(),
+                                        dbc.Row(
+                                            [
+                                                #dorpdown mês inicial
+                                                dbc.Col([dropdown8_mes_incio_ocorrencias], md=6),
+                                                #dropdown Mês final
+                                                dbc.Col([dropdown9_mes_fim_ocorrencias], md=6)
+                                            ]
+                                        )
+                                    ]
+                                )
+                            ]
+                        ),
+                        dbc.Row(
+                            [
+                                dbc.Col(
+                                    [
+                                        html.Div(id='output_media_ocorrencias', children=["Selecione uma UF, o tipo de crime e o período de tempo"]
+                                        ,style={'background-color':'#39B5E6',
+                                                'fontSize' : '16px', 
+                                                'color' : '#FFFFFF', 
+                                                'textAlign': 'center',
+                                                'font-weight': 'bold',
+                                            }            
+                                        ),
+                                    ]
+                                )
+                            ]
+                        )
+                    ], md=6,
+                )
+            ],
+            align="center",
+        ),
+        #rankings [DONE]
+        dbc.Row(
+            [
+                dbc.Col(
+                    [
+                        html.Br(),
+                        html.Br(),
                         html.H4(children = 'Ranking estadual por crime', style = {'textAlign': 'center','color' : '#007CBA'}),
                         dbc.Row(
                             [
-                                dbc.Col([dropdown8_estadual_crime], md = 6),
+                                dbc.Col([dropdown14_estadual_crime], md = 6),
                                 dbc.Col(
                                     [
                                         html.P('Número de estados', style = {
@@ -346,16 +652,18 @@ body = html.Div(
                 ),
                 dbc.Col(
                     [
+                        html.Br(),
+                        html.Br(),
                         html.H4(children = 'Ranking criminal por estado', style = {'textAlign': 'center','color' : '#007CBA'}),
                         dbc.Row(
                             [
-                                dbc.Col([dropdown9_criminal_estado], md = 6),
+                                dbc.Col([dropdown15_criminal_estado], md = 6),
                                 dbc.Col(
                                     [
                                         html.P('Número de crimes', style = {
                                             'textAlign': 'left','color' : '#007CBA','font-weight': 'bold'
                                         }),
-                                        dcc.Slider(id='num_crimes', min=1, max=9, step=1, tooltip={'always_visible':False, 'placement':'bottom'})
+                                        dcc.Slider(id='num_crimes', min=1, max=6, step=1, tooltip={'always_visible':False, 'placement':'bottom'})
                                     ]
                                 )
                             ]
@@ -417,13 +725,63 @@ def update_ocorrencias(value_uf, value_nome_crime):
 )
 
 def update_vitimas(value_uf, value_nome_crime):
+    print(value_uf)
     if (value_uf and value_nome_crime) is None:
         raise PreventUpdate
     else:
         data_vitimas = requests.get("http://54.174.134.220:8080/quantidade/vitimas/"+str(value_nome_crime)+"/"+str(value_uf))
         data_vitimas = data_vitimas.json()
+        print(data_vitimas)
         label = str(data_vitimas['quantidade'])+" vítimas no estado."
         return label
+
+#callback média de vítimas mensais
+@app.callback(
+    Output('output_media_vitimas','children'),
+    [Input('media_crime_vitimas','value'),Input('uf_media_vitimas','value'),
+    Input('entre_anos1','value'),Input('mes_inicio_vitimas_mensais','value'),
+    Input('mes_fim_vitimas_mensais','value')]
+)
+
+def update_vitimas_mensais(value_nome_crime,value_uf,value_anos,value_mes_ini,value_mes_fim):
+    if (value_uf and value_nome_crime and value_anos and value_mes_ini and value_mes_fim) is None:
+        raise PreventUpdate
+    else:
+        if (value_anos[0] == value_anos[1] and value_mes_ini > value_mes_fim):
+            label = "Insira um período de tempo válido!"
+            return label
+        else:
+            data_media_vitimas = requests.get(
+                "http://54.174.134.220:8080/media/vitimas/"+str(value_nome_crime)+"/"+str(value_uf)+
+                "/"+str(value_mes_ini)+"-"+str(value_anos[0])+"/"+str(value_mes_fim)+"-"+str(value_anos[1]))
+            data_media_vitimas = data_media_vitimas.json()
+            #print(data_media_vitimas)
+            label = str(round(data_media_vitimas['vitimas'],2))+" é a média de vítimas no estado."
+            return label
+
+#callback média de ocorrencias mensais
+@app.callback(
+    Output('output_media_ocorrencias','children'),
+    [Input('nome_crime_ocorrencias_mensais','value'),Input('uf_ocorrencias_mensais','value'),
+    Input('entre_anos2','value'),Input('mes_inicio_ocorrencias_mensais','value'),
+    Input('mes_fim_ocorrencias_mensais','value')]
+)
+
+def update_ocorrencias_mensais(value_nome_crime,value_uf,value_anos,value_mes_ini,value_mes_fim):
+    if (value_uf and value_nome_crime and value_anos and value_mes_ini and value_mes_fim) is None:
+        raise PreventUpdate
+    else:
+        if (value_anos[0] == value_anos[1] and value_mes_ini > value_mes_fim):
+            label = "Insira um período de tempo válido!"
+            return label
+        else:
+            data_media_ocorrencias = requests.get(
+                "http://54.174.134.220:8080/media/ocorrencias/"+str(value_nome_crime)+"/"+str(value_uf)+
+                "/"+str(value_mes_ini)+"-"+str(value_anos[0])+"/"+str(value_mes_fim)+"-"+str(value_anos[1]))
+            data_media_ocorrencias = data_media_ocorrencias.json()
+            #print(data_media_ocorrencias)
+            label = str(round(data_media_ocorrencias['ocorrencias'],2))+" é a média de ocorrências no estado."
+            return label
 
 #callback para o ranking estadual por crime
 @app.callback(
