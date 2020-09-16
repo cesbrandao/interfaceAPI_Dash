@@ -2,7 +2,7 @@
 
 A API foi construida para a análise de dados a partir do dataset <indicadoressegurancapublicauf(mes)(ano)>.xlsx obtido em http://dados.gov.br/dataset/sistema-nacional-de-estatisticas-de-seguranca-publica
 
-### Funções
+# Funções
 
 ## Número de ocorrências e vítimas por ano
 ## Número total de ocorrências por estado
