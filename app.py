@@ -23,7 +23,7 @@ navbar = dbc.Navbar(
             dbc.Row(
                 [
                     dbc.Col(html.Img(src='data:image/png;base64,{}'.format(encoded_image.decode()),height="75px")),
-                    dbc.Col(html.P("Carlos Eduardo, Geronimo, Lucas Natanael, Raissa e Sergio", style={'font-size':'10px','font-weight': 'bold'}),align='center',md=12)
+                    dbc.Col(html.P("Carlos Eduardo, Gerônimo, Lucas Natanael, Raíssa e Sérgio", style={'font-size':'10px','font-weight': 'bold'}),align='center',md=12)
                 ],
             ),
         )
