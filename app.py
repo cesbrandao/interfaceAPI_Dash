@@ -91,7 +91,8 @@ dropdown3_ocorrencias = dbc.FormGroup(
         }),
         dcc.Dropdown(
             id="nome_crime_ocorrencias",
-            options=[{'label':'Furto de veículo','value':'furto_de_veiculo'},
+            options=[{'label':'Todos','value':'todos'},
+            {'label':'Furto de veículo','value':'furto_de_veiculo'},
             {'label':'Roubo de veículo','value':'roubo_de_veiculo'},
             {'label':'Roubo a instituição financeira','value':'roubo_a_instituiçao_financeira'},
             {'label':'Roubo de carga','value':'roubo_de_carga'},
@@ -143,7 +144,8 @@ dropdown5_vitimas = dbc.FormGroup(
         }),
         dcc.Dropdown(
             id="nome_crime_vitimas",
-            options=[{'label':'Homicídio doloso','value':'homicidio_doloso'},
+            options=[{'label':'Todos','value':'todos'},
+            {'label':'Homicídio doloso','value':'homicidio_doloso'},
             {'label':'Lesão corporal seguida de morte','value':'lesao_corporal_seguida_de_morte'},
             {'label':'Roubo seguido de morte (latrocínio)','value':'roubo_seguido_de_morte_(latrocinio)'},
             ],
