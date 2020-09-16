@@ -693,13 +693,11 @@ def update_crimes_ano_graph(value):
     else:
         data_crime_ano = requests.get("http://54.174.134.220:8080/quantidade/crimes/"+str(value))
         data_crime_ano = data_crime_ano.json()
-        #print(data_crime_ano)
         figure = {
             'data':[
                 {'x': [data_crime_ano['Ano']], 'y': [data_crime_ano['Ocorrências']], 'type': 'bar', 'name': 'Ocorrências'},
                 {'x': [data_crime_ano['Ano']], 'y': [data_crime_ano['Vítimas']], 'type': 'bar', 'name': 'Vítimas'}
             ],
-            #'layout': {'title': 'Crimes por ano'}
         }
         return figure
 
@@ -712,7 +710,6 @@ def update_crimes_ano_graph(value):
 def update_ocorrencias(value_uf, value_nome_crime):
     data_ocorrencias = requests.get("http://54.174.134.220:8080/quantidade/ocorrencias/"+str(value_nome_crime)+"/"+str(value_uf))
     data_ocorrencias = data_ocorrencias.json()
-
     label = "Selecione uma UF e o tipo de crime"
     if (value_uf and value_nome_crime) is not None:
         label = str(data_ocorrencias['quantidade'])+" ocorrências no estado."
@@ -731,7 +728,6 @@ def update_vitimas(value_uf, value_nome_crime):
     else:
         data_vitimas = requests.get("http://54.174.134.220:8080/quantidade/vitimas/"+str(value_nome_crime)+"/"+str(value_uf))
         data_vitimas = data_vitimas.json()
-        print(data_vitimas)
         label = str(data_vitimas['quantidade'])+" vítimas no estado."
         return label
 
@@ -755,7 +751,6 @@ def update_vitimas_mensais(value_nome_crime,value_uf,value_anos,value_mes_ini,va
                 "http://54.174.134.220:8080/media/vitimas/"+str(value_nome_crime)+"/"+str(value_uf)+
                 "/"+str(value_mes_ini)+"-"+str(value_anos[0])+"/"+str(value_mes_fim)+"-"+str(value_anos[1]))
             data_media_vitimas = data_media_vitimas.json()
-            #print(data_media_vitimas)
             label = str(round(data_media_vitimas['vitimas'],2))+" é a média de vítimas no estado."
             return label
 
@@ -823,8 +818,6 @@ def update_ranking_criminal_estado(value_uf,value_num):
         data_criminal_estado = data_criminal_estado.json()
         crimes = []
         quantidade = []
-        #print(data_criminal_estado)
-        #print(type(data_criminal_estado))
         for element in data_criminal_estado:
                 crimes.append(element['crime'])
                 quantidade.append(element['ocorrencias'])
