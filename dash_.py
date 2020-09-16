@@ -837,4 +837,4 @@ def update_ranking_criminal_estado(value_uf,value_num):
         return figure
     
 if __name__ == '__main__':
-    app.run_server(debug = True)
+    app.run_server(debug = False)
