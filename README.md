@@ -5,6 +5,7 @@ A API foi construída em Flask para a análise de dados a partir do dataset **<i
 ## Funções
 
 #### Número de ocorrências e vítimas por ano
+![](screenshots/part1.gif)
 #### Número total de ocorrências por estado
 #### Número total de vítimas por estado
 #### Média mensal de vítimas por estado
