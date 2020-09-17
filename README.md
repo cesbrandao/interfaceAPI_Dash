@@ -6,7 +6,7 @@ Dataset **<indicadoressegurancapublicauf(mes)(ano)>.xlsx** obtido em http://dado
 
 ## Funções
 
-#### Número de ocorrências e vítimas por ano
+### Número de ocorrências e vítimas por ano
 ![](screenshots/part1.gif)
 #### Número total de ocorrências por estado
 ![](screenshots/part2.gif)
