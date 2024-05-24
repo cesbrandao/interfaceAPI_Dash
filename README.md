@@ -1,6 +1,6 @@
 # dash-interface-API
 
-Interface em Dash para visualização de análise de dados através de API em Flask.
+Interface em Plotly/Dash para visualização de análise de dados através de API em Flask.
 
 Dataset **<indicadoressegurancapublicauf(mes)(ano)>.xlsx** obtido em http://dados.gov.br/dataset/sistema-nacional-de-estatisticas-de-seguranca-publica
 
